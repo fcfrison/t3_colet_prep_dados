@@ -1,0 +1,46 @@
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+// Diagrama gerado a partir de https://dbdiagram.io/
+
+Table internacoes_mes_ano{
+  n_aih string [primary key]
+  paciente_key string
+  time_key string [primary key]
+  cid_10_key string
+  municipio_key string
+  valor_internacao number
+  nr_diarias number
+}
+
+Table time_table{
+  time_key string [primary key]
+  ano number
+  mes number
+}
+Table paciente{
+  id_paciente string [primary key]
+  nasc datetime
+  sexo string
+}
+
+Table cid_10 {
+  cid_10_key string [primary key]
+  descricao string
+}
+
+Table municipio {
+  cod_ibge number [primary key]
+  nome string
+  cod_uf number
+}
+
+Table uf {
+  cod_uf number [primary key]
+  nome string
+}
+
+Ref: internacoes_mes_ano.time_key > time_table.time_key
+Ref: paciente.id_paciente < internacoes_mes_ano.n_aih
+Ref: cid_10.cid_10_key < internacoes_mes_ano.cid_10_key
+Ref: internacoes_mes_ano.municipio_key > municipio.cod_ibge
+Ref: municipio.cod_uf > uf.cod_uf
