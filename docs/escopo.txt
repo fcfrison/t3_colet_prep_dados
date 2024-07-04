@@ -1,4 +1,4 @@
-- qual o tempo médio de internação hospitalares por doença dado um Município e um ano?
+- qual o tempo médio de internação hospitalares por doença dado em um dado ano?
 - qual a variação dos valores mensais gastos pelos municípios ao longo dos anos?
 - qual a variação dos valores mensais gastos pelos municípios ao longo dos meses dadas diferentes doenças?
 - o tempo médio de internaçao por doença é diferente entre os diferentes municípios?
