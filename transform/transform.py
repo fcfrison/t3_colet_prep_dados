@@ -23,6 +23,7 @@ def transform()->None:
     df_paciente_table : pd.DataFrame = create_paciente_table(df_sih)
     df_paciente_table = convert_date_to_datetime(df=df_paciente_table)
     df_municipios_table : pd.DataFrame = create_municipios_table()
+    df_municipios_table=insert_lat_long(df=df_municipios_table)
     df_estados_table : pd.DataFrame = create_estados_table()
     # Cria time_key
     df_sih['TIME_KEY'] = df_sih['ANO_CMPT'] + '|' + df_sih['MES_CMPT']
@@ -35,7 +36,8 @@ def transform()->None:
                as_index=False).sum()
     df_time_table.to_csv(path_or_buf=OUTPUT/'time_table.csv',sep=';', index=False)
     df_paciente_table.to_csv(path_or_buf=OUTPUT/'paciente_table.csv',sep=';', index=False)
-    df_municipios_table.to_csv(path_or_buf=OUTPUT/'municipios_table.csv',sep=';', index=False)
+    df_municipios_table.to_csv(path_or_buf=OUTPUT/'municipios_table.csv',sep=';',
+                               index=False, decimal=',')
     df_estados_table.to_csv(path_or_buf=OUTPUT/'estados_table.csv',sep=';', index=False)
     df_cid_table.to_csv(path_or_buf=OUTPUT/'cid_table.csv',sep=';', index=False)
     df_sih.to_csv(path_or_buf=OUTPUT/'internacoes.csv',sep=';',index=False,decimal=',')

@@ -64,3 +64,22 @@ def clean_numeric_columns(df:pd.DataFrame)->pd.DataFrame:
                     } 
     df_sih = df_sih.astype(dtype=dtypes)
     return df_sih
+def insert_lat_long(df:pd.DataFrame)->pd.DataFrame:
+    dtypes : dict = {
+        'codigo_ibge':str,
+        'latitude':float,
+        'longitude':float
+    }
+    df_lat_long : pd.DataFrame = pd.read_csv(filepath_or_buffer=IBGE_DATA/'municipios_lat_long.csv',
+                                             sep=',',dtype=dtypes)
+    selected_columns:List[str]=['codigo_ibge','latitude','longitude']
+    rename_dict:dict={
+        'codigo_ibge':'COD_IBGE',
+        'latitude':'lat',
+        'longitude':'long'
+    }
+    df_lat_long = df_lat_long[selected_columns]
+    df_lat_long.rename(columns=rename_dict,inplace=	True)
+    df_lat_long['COD_IBGE'] = df_lat_long['COD_IBGE'].transform(func=lambda arg:arg[:6])
+    df=df.merge(right=df_lat_long, how='left')
+    return df
