@@ -22,7 +22,7 @@ def create_paciente_table(df:pd.DataFrame)->pd.DataFrame:
     df_paciente_table = df[['N_AIH','NASC','SEXO']]
     df_paciente_table = df_paciente_table.drop_duplicates()
     df_paciente_table = df_paciente_table.rename(columns={'N_AIH':'ID_PACIENTE'})
-    df_paciente_table.drop_duplicates(inplace=True)
+    df_paciente_table.drop_duplicates(subset='ID_PACIENTE',inplace=True)
     return df_paciente_table
 def convert_date_to_datetime(df:pd.DataFrame)->pd.DataFrame:
     df['NASC'] = pd.to_datetime(df['NASC'], format='%Y%m%d')
