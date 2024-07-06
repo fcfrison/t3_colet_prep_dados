@@ -21,6 +21,15 @@ O código desenvolvido tem duas finalidades principais:
 
         pip install -r ./requirements.txt
 
+## Como extrair os dados a partir do SIH-SUS
+Para realizar a extração de dados a partir do SIH, abra um terminal, vá até a raiz do projeto e digite:
+                
+        python main.py uf ano_inicial ano_final
+
+Por exemplo, para extrair dados do RS para os anos de 2015 e 2016, rode o seguinte comando:
+
+        python main.py RS 2015 2016
+
 ## Estrutura do projeto
 1. Os arquivos de dados estão na pasta `./data`;
 2. Os `scripts` de extração estão no diretório `extract`;
@@ -42,9 +51,9 @@ Foram também utilizadas como fontes de dados:
  - Tabela contendo a latitude e longitude dos municípios brasileiros: dados obtidos a partir de
         https://github.com/kelvins/municipios-brasileiros/blob/main/csv/municipios.csv
 
-## Como extrair os dados
-Para realizar a extração de dados a partir do SIH
+
 ## Link úteis
 https://pcdas.icict.fiocruz.br/conjunto-de-dados/sistema-de-informacoes-hospitalares-do-sus-sihsus/dicionario-de-variaveis/
 https://repositorio.ipea.gov.br/bitstream/11058/9409/1/Uma_analise_da_base_de_dados_do_sistema_de_informacao_hospitalar.pdf
+
 
