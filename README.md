@@ -24,11 +24,11 @@ O código desenvolvido tem duas finalidades principais:
 ## Como extrair os dados a partir do SIH-SUS
 Para realizar a extração de dados a partir do SIH, abra um terminal, vá até a raiz do projeto e digite:
                 
-        python main.py uf ano_inicial ano_final
+        python main.py extract uf ano_inicial ano_final
 
 Por exemplo, para extrair dados do RS para os anos de 2015 e 2016, rode o seguinte comando:
 
-        python main.py RS 2015 2016
+        python main.py extract RS 2015 2016
 
 ## Estrutura do projeto
 1. Os arquivos de dados estão na pasta `./data`;
