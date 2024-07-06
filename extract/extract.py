@@ -2,9 +2,10 @@ from typing import List
 from pysus.ftp.databases.sih import SIH
 from pysus.ftp import File, Database
 from utils.utils import create_folder
-from config.dir_config import DATA_DIR
-def extract()->None:
-    create_folder(path=DATA_DIR)
+from config.dir_config import SIH_DIR
+def extract(ano_inicial:int, ano_final:int, uf:str)->None:
+    create_folder(path=SIH_DIR)
     sih : Database = SIH().load()
-    sih_list_files : List[File] = sih.get_files("RD", uf="RS", year=2015)
-    sih.download(files=sih_list_files, local_dir=DATA_DIR)
+    for ano in range(ano_inicial,ano_final+1):
+        sih_list_files : List[File] = sih.get_files("RD", uf=uf, year=ano)
+        sih.download(files=sih_list_files, local_dir=SIH_DIR)
