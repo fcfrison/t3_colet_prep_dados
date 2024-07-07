@@ -5,6 +5,9 @@ O código desenvolvido tem duas finalidades principais:
 1. Extrair dados do Sistema de Internações Hospitalares do SUS e transformá-los.
 2. Criar _dashboards_ de Power BI, buscando visualizar os dados de maneira simples e interativa.
 
+O dashboard poderá ser acessado através de:
+https://app.powerbi.com/view?r=eyJrIjoiOTJkYzEwNWQtOGZhZC00OGI3LTlkYmQtZTE0YTk1NTMzYTVmIiwidCI6ImQwOTBlODc5LWJkOTItNDJlNS1iOGJhLTk3ZjMxZjY1ZmM1YyJ9
+
 
 
 ## Como rodar o projeto
@@ -57,6 +60,3 @@ https://pcdas.icict.fiocruz.br/conjunto-de-dados/sistema-de-informacoes-hospital
 https://repositorio.ipea.gov.br/bitstream/11058/9409/1/Uma_analise_da_base_de_dados_do_sistema_de_informacao_hospitalar.pdf
 
 
-<div>
- <iframe title="t3_dashboards" width="1024" height="1060" src="https://app.powerbi.com/view?r=eyJrIjoiOTJkYzEwNWQtOGZhZC00OGI3LTlkYmQtZTE0YTk1NTMzYTVmIiwidCI6ImQwOTBlODc5LWJkOTItNDJlNS1iOGJhLTk3ZjMxZjY1ZmM1YyJ9" frameborder="0" allowFullScreen="true"></iframe>
-</div>
